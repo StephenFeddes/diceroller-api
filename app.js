@@ -6,7 +6,7 @@ const app = express();
 app.get("/", (req, res) => {
     // Send the HTML file with the dynamically created JavaScript file
     //res.sendFile(__dirname + "/index.html");
-    console.log("Dice roller API")
+    res.send("Dice Roller API")
 });
 
 // Start the server
