@@ -1,21 +1,15 @@
 const express = require("express");
-const fs = require("fs");
+
+// Create an Express application
 const app = express();
 
-// Define a route to serve your HTML file
+// Define a route
 app.get("/", (req, res) => {
-    // Send the HTML file with the dynamically created JavaScript file
-    //res.sendFile(__dirname + "/index.html");
-    res.send("Dice Roller API")
+    res.send("Hello, World!");
 });
 
 // Start the server
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server is running on ${port}`);
-});
-
-app.get("/roll", (req, res) => {
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
-    res.send(`${randomNumber}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
