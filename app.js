@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.get("/roll", (req, res) => {
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+    res.json(randomNumber);
+});
+
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
